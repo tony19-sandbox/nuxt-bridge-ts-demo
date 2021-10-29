@@ -1,9 +1,21 @@
 <template>
-  <Tutorial/>
+  <button @click="toggle">Toggle {{active}}</button>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { defineComponent } from '#app'
 
-export default Vue.extend({})
+export default defineComponent({
+  data() {
+    const active:boolean = false;
+    return {
+      active
+    }
+  },
+  methods: {
+    toggle(): void {
+      this.active = !this.active
+    },
+  },
+})
 </script>
